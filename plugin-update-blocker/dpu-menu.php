@@ -71,10 +71,14 @@ jQuery(document).ready(function($) {
 
 <div class="wrap dpu-options">
 	<div id="icon-options-general" class="icon32"><br /></div>
-	<h2>Deactivate Plugins Updates</h2>
+	<h2>Plugin Updates Blocker</h2>
     <p>
-    In this page, you can select the plugins to which you want to disable their updates.<br />
-    You might need to refresh the page to 
+    Select for which plugins you want to disable updates.<br />You can then leave a note to explain the changes you made.
+	<br />	
+<b>Please note:</b><br />
+It's strongly recommended that you keep your WordPress plugins up to date.<br />
+If you skip plugin updates, you could expose your website to critical security issues.
+
     </p>
 	<form action="admin.php?page=<?php echo PUB_SLUG; ?>" method="post">
     <input type="hidden" name="action" value="pub_save">

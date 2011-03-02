@@ -1,8 +1,8 @@
 <?php
 /**
- Plugin Name: Plugin update blocker
+ Plugin Name: Plugin updates blocker
  Plugin URI: #
- Description: Deactivate the update process for the selected plugins
+ Description: Lets you disable unwanted updates for plugins
  Version: 0.1
  Author: Erwan Jegouzo
  Author URI: http://www.erwanjegouzo.com
@@ -22,12 +22,6 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-/*
-- activtion hook to create the option
-- deactivation hook
-- mention the author in the code, on top of the function
 */
 
 define('PUB_NAME', 'Plugin update blocker');
