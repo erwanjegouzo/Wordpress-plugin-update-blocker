@@ -24,8 +24,8 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-define('PUB_NAME', 'Plugin update blocker');
-define('PUB_SLUG', 'plugin-update-blocker');
+define('PUB_NAME', 'Plugin updates blocker');
+define('PUB_SLUG', 'plugin-updates-blocker');
 define('PUB_UPDATE_DEACTIVATED', 'pub_update_deactivated');
 
 if (!function_exists('get_plugins')){ require_once (ABSPATH."wp-admin/includes/plugin.php"); }

@@ -71,14 +71,9 @@ jQuery(document).ready(function($) {
 
 <div class="wrap dpu-options">
 	<div id="icon-options-general" class="icon32"><br /></div>
-	<h2>Plugin Updates Blocker</h2>
+	<h2><?php echo PUB_NAME; ?></h2>
     <p>
     Select for which plugins you want to disable updates.<br />You can then leave a note to explain the changes you made.
-	<br />	
-<b>Please note:</b><br />
-It's strongly recommended that you keep your WordPress plugins up to date.<br />
-If you skip plugin updates, you could expose your website to critical security issues.
-
     </p>
 	<form action="admin.php?page=<?php echo PUB_SLUG; ?>" method="post">
     <input type="hidden" name="action" value="pub_save">
@@ -111,7 +106,7 @@ If you skip plugin updates, you could expose your website to critical security i
         ?>
         </tbody>
     </table>
-    <input type="submit" class='button-primary' value="Hide selected items">
+    <input type="submit" class='button-primary' value="deactivate updates for selected plugins">
     
     </form>
     
