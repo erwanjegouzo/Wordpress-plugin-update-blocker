@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: jegerwan
 Donate link: #
-Tags: plugin, update
+Tags: plugin, update, admin, tools
 Requires at least: 2.9
 Tested up to: 3.1
-Stable tag: trunk
+Stable tag: 0.2
 
 Lets you disable unwanted updates for plugins
 
@@ -28,6 +28,11 @@ Pretty straightforward :
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. The plugin admin page is located in the "Tools" menu
 
+
+== Upgrade Notice ==
+
+first update, no upgrage possible
+
 == Frequently Asked Questions ==
 
 = Is the update blocker permanent? =
@@ -39,6 +44,14 @@ This will bloc the updates for the selected plugins, as long as it is activated
 1. Plugin page where you can disable your plugins
 
 == Changelog ==
+
+= 0.2 =
+- added saved notifications
+- extended description on the plugin page
+- added PUB_VERSION & PUB_DIR
+- added settings link in the plugin list
+- updated screenshot
+- added Plugin URI in plugin description
 
 = 0.1 =
 First update. The plugin is working but I will ad more features

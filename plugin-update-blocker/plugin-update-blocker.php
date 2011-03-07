@@ -1,11 +1,11 @@
 <?php
 /**
- Plugin Name: Plugin updates blocker
- Plugin URI: #
- Description: Lets you disable unwanted updates for plugins
- Version: 0.1
- Author: Erwan Jegouzo
- Author URI: http://www.erwanjegouzo.com
+Plugin Name: Plugin updates blocker
+Plugin URI: http://wordpress.org/extend/plugins/plugin-update-blocker/
+Description: Lets you disable unwanted updates for plugins
+Version: 0.2
+Author: Erwan Jegouzo
+Author URI: http://www.erwanjegouzo.com
 
     Plugin: Copyright 2011 Erwan Jegouzo  (email : erwan.jegouzo@gmail.com)
 
@@ -24,21 +24,35 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-define('PUB_NAME', 'Plugin updates blocker');
-define('PUB_SLUG', 'plugin-updates-blocker');
+
+define('PUB_VERSION', '0.2');
+define('PUB_NAME', 'Plugin update blocker');
+define('PUB_SLUG', 'plugin-update-blocker');
+define('PUB_DIR', dirname(__FILE__));
+
 define('PUB_UPDATE_DEACTIVATED', 'pub_update_deactivated');
+  
 
 if (!function_exists('get_plugins')){ require_once (ABSPATH."wp-admin/includes/plugin.php"); }
 if (!function_exists('wp_update_plugins')){ require_once (ABSPATH."includes/update.php"); }
 if (!function_exists('current_user_can')){ require_once (ABSPATH."includes/capabilities.php"); }
 
-add_action('plugins_loaded','hein_init');
+add_action('plugins_loaded','pub_plugins_loaded');
 
-function hein_init(){
+function pub_plugins_loaded(){
 	if(is_admin() && current_user_can('update_plugins')){
 		add_action('init','pub_init');
 		add_action('wp_head', 'pub_wp_head');
+		add_filter('plugin_action_links', 'pub_plugin_action_links', 10, 2);
 	}
+}
+
+function pub_plugin_action_links($links, $file) {
+	$this_plugin = dirname(plugin_basename(__FILE__)) . '/'.PUB_SLUG.'.php';
+	if($file == $this_plugin) {
+    	$links[] = '<a href="admin.php?page='.PUB_SLUG.'">Settings</a>';
+	}
+	return $links;
 }
 
 function pub_init(){

@@ -15,6 +15,12 @@ if(isset($_POST["action"]) && $_POST["action"] == "pub_save" && current_user_can
 	}
 	
 	update_option(PUB_UPDATE_DEACTIVATED, serialize($pub_plugins));
+	
+	?>
+    <div class='updated'>
+    <p>Options saved!</p>
+    </div>
+    <?php
 	set_site_transient('update_plugins', time()-864000);
 	wp_update_plugins();
 }
@@ -73,7 +79,8 @@ jQuery(document).ready(function($) {
 	<div id="icon-options-general" class="icon32"><br /></div>
 	<h2><?php echo PUB_NAME; ?></h2>
     <p>
-    Select for which plugins you want to disable updates.<br />You can then leave a note to explain the changes you made.
+    Select for which plugins you want to disable updates.<br />You can then leave a note to explain the changes you made.<br />
+    If a plugin you deactivated had a new version ready, you may need to refresh the page to hide it.
     </p>
 	<form action="admin.php?page=<?php echo PUB_SLUG; ?>" method="post">
     <input type="hidden" name="action" value="pub_save">
